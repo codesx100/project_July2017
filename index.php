@@ -93,6 +93,7 @@ $statement3->closeCursor();
                 <th>Completed</>
                 <th>&nbsp;</th> 
                 <th>&nbsp;</th> 
+                <th>&nbsp;</th>
             </tr>
          
             <?php foreach ($products as $product) : ?>
@@ -114,6 +115,20 @@ $statement3->closeCursor();
                     <input type="hidden" name="category_id"
                            value="<?php echo $product['ListID']; ?>">
                     <input type="submit" value="Completed">
+                </form></td>
+                
+                <td><form action="edit_product_form.php" method="post">
+                    <input type="hidden" name="product_name"
+                           value="<?php echo $product['EventName']; ?>">
+                    <input type="hidden" name="product_code"
+                           value="<?php echo $product['iEventCode']; ?>">          
+                    <input type="hidden" name="product_id"
+                           value="<?php echo $product['itemID']; ?>">
+                    <input type="hidden" name="category_id"
+                           value="<?php echo $product['ListID']; ?>">
+                    <input type="hidden" name="done"
+                           value="<?php echo $product['Done']; ?>">
+                    <input type="submit" value="Update">
                 </form></td>
             </tr>
             <?php endforeach; ?>

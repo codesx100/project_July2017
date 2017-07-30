@@ -46,7 +46,7 @@ $statement->closeCursor();
                            value="<?php echo $category['ListID']; ?>"/>
                     <label>New Name:</label>
                     <input type="text" name="newname"/>
-                    <input type="submit" value="Update"/>
+                    <input id="edit_category_button" type="submit" value="Update"/>
                 </form>
             </td>
         </tr>
@@ -55,7 +55,6 @@ $statement->closeCursor();
     <h2 class="margin_top_increase">Add Category</h2>
     <form action="add_category.php" method="post"
           id="add_category_form">
-
         <label>Name:</label>
         <input type="text" name="name" />
         <input id="add_category_button" type="submit" value="Add"/>

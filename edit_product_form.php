@@ -1,7 +1,7 @@
-//This page is the form you would see after clicking Update on any list items
+<!--//This page is the form you would see after clicking Update on any list items
 //
 //Here you are to change the list's items, but using this form and edit_product.php
-
+-->
 <?php
 require('database.php');
 
@@ -46,19 +46,23 @@ $statement3->closeCursor();
 
 <!-- the body section -->
 <body>
-    <header><h1>Item Editing Manager</h1></header> //title
+    <header><h1>Item Editing Manager</h1></header> 
     <main>
         <h1></h1>
-        //call the controller for user inputs
+        
+<!-- call the controller for user inputs -->
+   
          <form action="edit_product.php" method="post"
               id="edit_product_form"> 
         
-        //gets item_id for controller
-                //this is for Updating the SQL database by itemID 
+<!-- gets item_id for controller-->
+
+<!--this is for Updating the SQL database by itemID -->
             <input type="hidden" name="product_id"
                            value="<?php echo $product['itemID']; ?>"> 
             
-            //make a dropbox for categories(Lists)
+<!-- make a dropbox for categories(Lists)-->
+
             <label>List:</label>
             <select name="category_id">
             <?php foreach ($categories as $category) : ?>
@@ -68,9 +72,10 @@ $statement3->closeCursor();
             <?php endforeach; ?>
             </select><br>
 
-            //dropbos for products (Events/Items)
+<!-- dropbos for products (Events/Items)-->
             
-            //Get old name
+<!-- Get old name -->
+
             <label>Old Name:</label>
             <select name="product_id">
             <?php foreach ($products as $product) : ?>
@@ -80,19 +85,23 @@ $statement3->closeCursor();
             <?php endforeach; ?>
             </select><br>
             
-                      //Get old name's ItemID and ListID
-              <td><?php echo $product['itemID']; ?></td>
-              <td><?php echo $product['ListID']; ?></td>
+<!-- Get old names ItemID and ListID -->
+
+              <?php echo $product['itemID']; ?>
+              <?php echo $product['ListID']; ?>
             
-            //Get new name for edit_product.php
+<!-- Get new name for edit_product.php-->
+
             <label>New Name:</label>
             <input type="text" name="code"><br>
             
-            //get new description which is the EventName in the SQL database
+<!-- get new description which is the EventName in the SQL database-->
+
             <label>New Description:</label>
             <input type="text" name="name"><br>
 
-            //submit button
+<!-- submit button-->
+
             <label>&nbsp;</label>
             <input type="submit" value="Change Item/Event"><br>
         </form>
