@@ -1,8 +1,9 @@
 <?php
+
+
 // Get the category ID and name
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
-$name = filter_input(INPUT_POST, 'newname');
-
+$name = filter_input(INPUT_POST, 'name');
 
 // Validate inputs
 if ($name == null || $category_id == null) {
@@ -12,11 +13,9 @@ if ($name == null || $category_id == null) {
     require_once('database.php');
 
     // Edit the product to the database  
-    $query = 'UPDATE Lists 
-             SET ListName = :name
-             WHERE ListID = :category_id';
+    $query = "UPDATE `oah5`.`Lists` SET `ListName` = '$name' WHERE `Lists`.`ListID` = '$category_id';";
     $statement = $db->prepare($query);
-    $statement->bindValue(':newname', $newname);
+    $statement->bindValue(':name', $name);
     $statement->execute();
     $statement->closeCursor();
 

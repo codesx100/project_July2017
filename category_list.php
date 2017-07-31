@@ -41,18 +41,18 @@ $statement->closeCursor();
             </td>
             <td>
             <form>
-                  <form action="edit_category.php" method="post">
+                  <form action="edit_category.php" method="post"
+                    id ="edit_category_form">
                     <input type="hidden" name="category_id"
                            value="<?php echo $category['ListID']; ?>"/>
-                    <label>New Name:</label>
-                    <input type="text" name="newname"/>
+                    <input type="text" name="name"/>
                     <input id="edit_category_button" type="submit" value="Update"/>
                 </form>
             </td>
         </tr>
         <?php endforeach; ?>  
     </table>
-    <h2 class="margin_top_increase">Add Category</h2>
+    <h2 class="margin_top_increase">Add List</h2>
     <form action="add_category.php" method="post"
           id="add_category_form">
         <label>Name:</label>
