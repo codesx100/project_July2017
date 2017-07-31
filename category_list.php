@@ -40,13 +40,12 @@ $statement->closeCursor();
                 </form>
             </td>
             <td>
+            <form action="edit_category.php" method="post">
             <form>
-                  <form action="edit_category.php" method="post"
-                    id ="edit_category_form">
                     <input type="hidden" name="category_id"
                            value="<?php echo $category['ListID']; ?>"/>
                     <input type="text" name="name"/>
-                    <input id="edit_category_button" type="submit" value="Update"/>
+                    <input type="submit" value="Update"/>
                 </form>
             </td>
         </tr>
