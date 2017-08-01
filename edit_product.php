@@ -1,27 +1,26 @@
 <?php
 // Get the product data
-$product_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
-$category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
-$code = filter_input(INPUT_POST, 'code', FILTER_VALIDATE_INT););
-$name = filter_input(INPUT_POST, 'name', FILTER_VALIDATE_INT););
+$product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
+$newcode = filter_input(INPUT_POST, 'newcode');
+$newname = filter_input(INPUT_POST, 'newname');
 
+
+//echo $product_id;
+//echo $newcode;
+//echo $newname;
 // Validate inputs
-if ($category_id == null || $category_id == false || $product_id == null || $product_id == false || 
-        $code == null || $name == null) {
+if ($product_id == null || $product_id == false || 
+        $newcode == null || $newname == null) {
     $error = "Invalid product data. Check all fields and try again.";
     include('error.php');
 } else {
     require_once('database.php');
     
       // Update the product to the database  
-    $query = 'UPDATE Events
-                 (EventCode, EventName)
-             Set
-                 (:code, :name)
-             WHERE itemID = :productID';
+    $query = ("UPDATE `oah5`.`Events` SET `EventCode` = '$newcode', `EventName` = '$newname' WHERE `Events`.`itemID` = '$product_id';");
     $statement = $db->prepare($query);
-    $statement->bindValue(':code', $code);
-    $statement->bindValue(':name', $name);
+  //  $statement->bindValue(':code', $code);
+  //  $statement->bindValue(':name', $name);
     $statement->execute();
     $statement->closeCursor();
 
