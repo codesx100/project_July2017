@@ -1,4 +1,6 @@
 <?php
+//This deletes a category
+
 // Get ID
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 

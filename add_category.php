@@ -1,4 +1,6 @@
 <?php
+
+//program adds data to the form, which it creates a new todo list
 // Get the category data
 $name = filter_input(INPUT_POST, 'name');
 

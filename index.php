@@ -1,4 +1,5 @@
 <?php
+//This program deals with the main home page, which contains all the lists and fuctions for items in the list
 require_once('database.php');
 
 //Insert Session
@@ -65,6 +66,9 @@ $statement3->closeCursor();
         <h2>Lists</h2>
         <nav>
         <ul>
+        
+    <!-- Loop to produce each List/category for the category_list -->
+    
             <?php foreach ($categories as $category) : ?>
             <li><a href=".?category_id=<?php echo $category['ListID']; ?>">
                     <?php echo $category['ListName']; ?>
@@ -82,6 +86,8 @@ $statement3->closeCursor();
         </ul>
         </nav>          
     </section>
+   
+ <!-- Section that contains the controls for each item of delete/edit/mark -->  
     
    <section>
         <h2><?php echo $category_name; ?></h2>

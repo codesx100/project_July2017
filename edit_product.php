@@ -1,4 +1,7 @@
 <?php
+
+//this code does the actual changing of editing items from what is entered from the product form
+
 // Get the product data
 $product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
 $newcode = filter_input(INPUT_POST, 'newcode');

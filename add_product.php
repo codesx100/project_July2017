@@ -1,4 +1,6 @@
 <?php
+//actual controller adding the data to the SQL server
+
 // Get the product data
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $code = filter_input(INPUT_POST, 'code');

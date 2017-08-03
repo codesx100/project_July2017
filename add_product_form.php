@@ -1,4 +1,6 @@
 <?php
+//this file adds an item, but is the form that appears. Code was based off chapter 4 and 5 homework
+
 require('database.php');
 $query = 'SELECT *
           FROM Lists

@@ -1,5 +1,5 @@
 <?php
-
+//this program edits the list name if requested
 
 // Get the category ID and name
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);

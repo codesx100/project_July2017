@@ -19,6 +19,7 @@ $statement->closeCursor();
 </head>
 
 <!-- the body section -->
+<!-- This allows for a page to display the List editor -->
 <body>
 <header><h1>ToDo Event Manager</h1></header>
 <main>

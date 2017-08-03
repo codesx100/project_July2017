@@ -1,6 +1,8 @@
 <?php
 require_once('database.php');
 
+//Using the code from chapter 4 and 5 this will delete a item
+
 // Get IDs
 $product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
